@@ -9,10 +9,5 @@ namespace Models
     public class DataContext
     {
         public IList<Message> Messages { get; set; }
-
-        public DataContext()
-        {
-            Messages = new List<Message>();
-        }
     }
 }
