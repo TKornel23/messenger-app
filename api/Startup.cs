@@ -28,6 +28,8 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<DataContext>();
+            services.AddSignalR();
+
             services.AddControllers();
             services.AddSignalR();
         }

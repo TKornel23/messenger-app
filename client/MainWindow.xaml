@@ -6,27 +6,39 @@
         xmlns:local="clr-namespace:client"
         mc:Ignorable="d"
         Title="MainWindow" Height="401" Width="502">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Border BorderThickness="2" BorderBrush="Gray">
+        <StackPanel Grid.Row="0">
+            <Label Content="Név:"/>
+            <TextBox x:Name="nev" Text="{Binding CurrentMessage.SenderName}" TextChanged="nev_TextChanged"/>
+        </StackPanel>
+        <Border Grid.Row="1" BorderThickness="2" BorderBrush="Gray" Margin="0,0,0,64" Grid.RowSpan="3">
             <ListBox>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Label Content="" ContentStringFormat=""/>
+                        <StackPanel>
+                            <Label Content="{Binding CurrentMesseage.SenderName}"/>
+                            <Label Content="{Binding CurrentMesseage.Date}"/>
+                            <Label Content="{Binding CurrentMesseage.Text}"/>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Border>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" Text="Írd ide az üzenetet"/>
-            <Button Grid.Column="1" Content="Küldés"/>
+            <TextBox Grid.Column="0" Text="{Binding CurrentMessage.Text}"/>
+            <Button Grid.Column="1" Content="Küldés" Command="{Binding CreateMessageCommand}"/>
         </Grid>
     </Grid>
 </Window>
