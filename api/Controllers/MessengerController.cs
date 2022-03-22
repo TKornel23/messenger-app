@@ -13,12 +13,12 @@ namespace api.Controllers
     [Route("[controller]")]
     public class MessengerController : ControllerBase
     {
-        private DataContext ctx;
+        DataContext ctx;
         IHubContext<SignalRHub> hub;
 
         public MessengerController(IHubContext<SignalRHub> hub)
         {
-            ctx.Messages = new List<Message>();
+            ctx = new DataContext();
             this.hub = hub;
         }
 
