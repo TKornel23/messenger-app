@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="401" Width="502">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="2" BorderBrush="Gray">
+            <ListBox>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="" ContentStringFormat=""/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Text="Írd ide az üzenetet"/>
+            <Button Grid.Column="1" Content="Küldés"/>
+        </Grid>
     </Grid>
 </Window>
