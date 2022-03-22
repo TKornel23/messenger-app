@@ -20,9 +20,17 @@ namespace client
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainWindowViewModel vm;
         public MainWindow()
         {
+            vm = this.DataContext as MainWindowViewModel;
             InitializeComponent();
+        }
+
+        private void nev_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            vm.CurrentMessage.SenderName = nev.Text;
         }
     }
 }
