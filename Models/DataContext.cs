@@ -4,11 +4,6 @@ namespace Models
 {
     public class DataContext
     {
-        public IList<Message> Messages { get; set; }
-
-        public DataContext()
-        {
-            this.Messages = new List<Message>();
-        }
+        public List<Message> Messages { get; set; } = new List<Message>();
     }
 }
