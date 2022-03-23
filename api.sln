@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "client", "client\client.csproj", "{96D177E9-935B-4197-B68A-B49CE3E2DAF2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{2134162D-9FE6-4A81-A09D-7D9E83D017C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "models", "Models\models.csproj", "{2134162D-9FE6-4A81-A09D-7D9E83D017C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apii", "apii\apii.csproj", "{791706AC-015B-48C9-842E-E719378F4966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "apii\api.csproj", "{791706AC-015B-48C9-842E-E719378F4966}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

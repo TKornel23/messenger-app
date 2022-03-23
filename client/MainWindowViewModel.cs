@@ -50,7 +50,7 @@ namespace client
         {
             if (!IsInDesignMode)
             {
-                Messages = new RestCollection<Message>("http://localhost:57152", "messenger", "hub");
+                Messages = new RestCollection<Message>("http://localhost:46266", "messenger", "hub");
                 CreateMessageCommand = new RelayCommand(() =>
                 {
                     Messages.Add(new Message()

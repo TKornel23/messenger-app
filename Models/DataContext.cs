@@ -2,8 +2,8 @@
 
 namespace Models
 {
-    public class DataContext
+    public static class DataContext
     {
-        public List<Message> Messages { get; set; } = new List<Message>();
+        public static List<Message> Messages { get; set; } = new List<Message>();
     }
 }

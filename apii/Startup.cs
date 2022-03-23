@@ -26,9 +26,7 @@ namespace apii
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddTransient<DataContext>();
-
+        { 
             services.AddControllers();
 
             services.AddSignalR();
@@ -56,7 +54,7 @@ namespace apii
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<SignalRHub>("/hub");
+                endpoints.MapHub<SignalRHub>("hub");
             });
         }
     }
