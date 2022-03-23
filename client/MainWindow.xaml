@@ -15,9 +15,9 @@
             <RowDefinition Height="10*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0">
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Label Content="Név:"/>
-            <TextBox x:Name="nev" Text="{Binding CurrentMessage.SenderName}" TextChanged="nev_TextChanged"/>
+            <TextBox x:Name="nev" Text="{Binding CurrentMessage.SenderName}" Width="300"/>
         </StackPanel>
         <Border Grid.Row="1" BorderThickness="2" BorderBrush="Gray" Margin="0,0,0,64" Grid.RowSpan="3">
             <ListBox>

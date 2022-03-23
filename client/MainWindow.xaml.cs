@@ -27,10 +27,9 @@ namespace client
             InitializeComponent();
         }
 
-        private void nev_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-            vm.CurrentMessage.SenderName = nev.Text;
-        }
+        //private void nev_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    vm.CurrentMessage.SenderName = nev.Text;
+        //}
     }
 }

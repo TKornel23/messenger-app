@@ -15,7 +15,7 @@ namespace client
 {
     public class MainWindowViewModel : ObservableRecipient
     {
-        public RestCollection<Message> Messages { get; set; }
+        public RestCollection<messenger> Messages { get; set; }
 
         public static bool IsInDesignMode
         {
@@ -25,15 +25,15 @@ namespace client
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
-        Message currentMessage;
+        messenger currentMessage;
 
-        public Message CurrentMessage
+        public messenger CurrentMessage
         {
             get { return currentMessage; }
             set
             {
 
-                currentMessage = new Message()
+                currentMessage = new messenger()
                 {
                     Date = DateTime.Now,
                     Text = value.Text
@@ -50,10 +50,10 @@ namespace client
         {
             if (!IsInDesignMode)
             {
-                Messages = new RestCollection<Message>("http://localhost:46266", "messenger", "hub");
+                Messages = new RestCollection<messenger>("http://localhost:46266/", "messenger", "hub");
                 CreateMessageCommand = new RelayCommand(() =>
                 {
-                    Messages.Add(new Message()
+                    Messages.Add(new messenger()
                     {
                         SenderName = currentMessage.SenderName,
                         Date = currentMessage.Date,

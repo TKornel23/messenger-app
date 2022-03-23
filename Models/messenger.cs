@@ -2,7 +2,7 @@
 
 namespace Models
 {
-    public class Message
+    public class messenger
     {
         public string Text { get; set; }
         public DateTime Date { get; set; }

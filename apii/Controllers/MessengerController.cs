@@ -21,14 +21,14 @@ namespace apii.Controllers
         }
 
         [HttpPost]
-        public void Create([FromBody] Message message)
+        public void Create([FromBody] messenger message)
         {
             DataContext.Messages.Add(message);
             this.hub.Clients.All.SendAsync("MessageCreated", message);
         }
 
         [HttpGet]
-        public IEnumerable<Message> GetAll()
+        public IEnumerable<messenger> GetAll()
         {
             return DataContext.Messages;
         }
