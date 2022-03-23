@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="401" Width="502">
+        Title="MainWindow" Height="401" Width="502"
+        Loaded="Window_Loaded">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
@@ -19,14 +20,14 @@
             <Label Content="Név:"/>
             <TextBox x:Name="nev" Text="{Binding CurrentMessage.SenderName}" Width="300"/>
         </StackPanel>
-        <Border Grid.Row="1" BorderThickness="2" BorderBrush="Gray" Margin="0,0,0,64" Grid.RowSpan="3">
-            <ListBox>
+        <Border Grid.Row="1" BorderThickness="2" BorderBrush="Gray" Margin="0,0,0,64" Grid.RowSpan="3" >
+            <ListBox ItemsSource="{Binding Messages}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
-                            <Label Content="{Binding CurrentMesseage.SenderName}"/>
-                            <Label Content="{Binding CurrentMesseage.Date}"/>
-                            <Label Content="{Binding CurrentMesseage.Text}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Date}"/>
+                            <Label Content="{Binding SenderName}"/>
+                            <Label Content="{Binding Text}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

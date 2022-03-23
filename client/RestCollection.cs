@@ -166,6 +166,7 @@ namespace api.client
                 throw new ArgumentException(error.Msg);
             }
             response.EnsureSuccessStatusCode();
+            ;
         }
 
         public void Post<T>(T item, string endpoint)

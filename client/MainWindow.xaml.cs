@@ -23,8 +23,14 @@ namespace client
         MainWindowViewModel vm;
         public MainWindow()
         {
-            vm = this.DataContext as MainWindowViewModel;
+           
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            (this.DataContext as MainWindowViewModel).CurrentMessage = new Models.messenger();
         }
 
         //private void nev_TextChanged(object sender, TextChangedEventArgs e)
